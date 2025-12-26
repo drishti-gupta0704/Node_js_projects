@@ -6,21 +6,21 @@ const path = require("path");
 const server = http.createServer((req, res) => {
 
   if (req.url === "/style.css") {
-    const filePath = path.join(__dirname, "public4", "style.css");
+    const filePath = path.join(__dirname, "public", "style.css");
     const data = fs.readFileSync(filePath);
     res.writeHead(200, { "Content-Type": "text/css" });
     res.end(data);
   }
 
   else if (req.url === "/script.js") {
-    const filePath = path.join(__dirname, "public4", "script.js");
+    const filePath = path.join(__dirname, "public", "script.js");
     const data = fs.readFileSync(filePath);
     res.writeHead(200, { "Content-Type": "text/javascript" });
     res.end(data);
   }
 
   else if (req.url === "/") {
-    const filePath = path.join(__dirname, "pages4", "home.html");
+    const filePath = path.join(__dirname, "pages", "index.html");
     const data = fs.readFileSync(filePath);
     res.writeHead(200, { "Content-Type": "text/html" });
     res.end(data);
