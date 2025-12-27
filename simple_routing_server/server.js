@@ -12,7 +12,11 @@ const server = http.createServer((req, res) => {
   else if (req.url === "/login") {
     res.end("Login Page");
   } 
- 
+   else {
+    res.statusCode = 404;
+    res.end("404 Page Not Found");
+  }
+
 });
 
 server.listen(3000);
