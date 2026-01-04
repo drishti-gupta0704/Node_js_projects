@@ -16,6 +16,13 @@ const server = http.createServer((req, res) => {
 
     res.end(JSON.stringify(data));
   }
+   
+  else {
+    res.writeHead(404, {
+      "Content-Type": "text/plain"
+    });
+    res.end("Route not found");
+  }
 
   
 });
